@@ -71,6 +71,22 @@ class rjil::system::apt (
       ensure => 'absent',
       tag   => 'package',
     }
+  file { '/etc/apt/sources.list.d/akash1808.list':
+    ensure  => file,
+    owner   => root,
+    group   => root,
+    mode    => '0644',
+    source  => "puppet:///modules/rjil/akash1808.list",
+    tag   => 'package',
+  }
+  file { '/etc/apt/preferences.d/Akash1808-600':
+    ensure  => file,
+    owner   => root,
+    group   => root,
+    mode    => '0644',
+    source  => "puppet:///modules/rjil/Akash1808-600",
+    tag   => 'package',
+  }
   }
   create_resources(apt::source, $repositories, {'tag' => 'package'} )
 }

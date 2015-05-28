@@ -1,0 +1,8 @@
+Package:  *
+Pin: release o=Akash1808
+Pin-Priority: 400
+
+
+Package:  ceph-common-dbg ceph-common ceph-dbg ceph-fs-common-dbg ceph-fs-common ceph-fuse-dbg ceph-fuse ceph-mds-dbg ceph-mds ceph-resource-agents ceph-test-dbg ceph-test ceph libcephfs-dev libcephfs-java libcephfs-jni libcephfs1-dbg libcephfs1 librados-dev librados2-dbg librados2 libradosstriper-dev libradosstriper1-dbg libradosstriper1 librbd-dev librbd1-dbg librbd1 python-ceph python-cephfs python-rados python-rbd radosgw-dbg radosgw rbd-fuse-dbg rbd-fuse rest-bench-dbg rest-bench
+Pin: release o=Akash1808
+Pin-Priority: 600
