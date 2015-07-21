@@ -1017,3 +1017,7 @@ squid3::refresh_patterns:
 rjil::haproxy::default_timeout_connect: 50000
 rjil::haproxy::default_timeout_client: 50000
 rjil::haproxy::default_timeout_server: 50000
+
+
+###increasing openfilelimit in contrail-api###
+rjil::contrail::server::contrail_api_open_file_limit: 65535

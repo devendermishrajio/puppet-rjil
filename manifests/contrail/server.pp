@@ -3,6 +3,7 @@
 ###
 class rjil::contrail::server (
   $enable_analytics = true,
+  $contrail_api_open_file_limit = 16384,
 ) {
 
   ##
@@ -63,5 +64,23 @@ class rjil::contrail::server (
   rjil::jiocloud::logrotate { $contrail_logrotate_delete:
     ensure => absent
   }
+
+
+  # overwrite the /etc/init/contrail-api.conf
+  # adding the line to set the number of openfiles
+  # the fix is for
+  # this may be one of the reasons for bad status line error in neutron.
+
+
+  file { '/etc/init/contrail-api.conf':
+    ensure  => file,
+    owner   => root,
+    group   => root,
+    mode    => '0644',
+    content => template('rjil/contrail-api.erb'),
+    require => Package['contrail-config-openstack'],
+    notify  => Service['contrail-api'],
+  }
+
   
 }
