@@ -202,3 +202,6 @@ node /^httpproxy\d+/ {
     content => 'server=8.8.8.8',
   }
 }
+node /^ce\d+/ {
+  include rjil::base
+}
