@@ -61,9 +61,3 @@ resources:
     image: trusty
     networks: default
     boot_volume: default_volume
-  ce: 
-    number: 1
-    flavor: large
-    image: trusty
-    networks: default
-    boot_volume: default_volume
