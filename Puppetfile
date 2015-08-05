@@ -207,3 +207,7 @@ mod 'community/archive',
 mod 'pdxcat/collectd',
   :git => "#{base_url}/pdxcat/puppet-module-collectd",
   :ref => 'v3.2.0'
+
+mod 'stackforge/ceilometer',
+  :git => "#{base_url}/jiocloud/puppet-ceilometer",
+  :ref => 'origin/master'
