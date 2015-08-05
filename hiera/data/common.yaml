@@ -139,7 +139,7 @@ openstack_extras::auth_file::keystone_protocol: "%{hiera('api_protocol')}"
 
 ########### client install
 ##################################
-openstack_extras::client::ceilometer: false
+openstack_extras::client::ceilometer: true
 
 ########### Openstack ports
 ##################################
