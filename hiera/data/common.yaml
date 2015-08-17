@@ -42,7 +42,9 @@ rjil::db::dbs:
   neutron:
     user: "%{hiera('neutron_db_user')}"
     pass: "%{hiera('neutron_db_password')}"
-
+  ceilometer:
+    user: "%{hiera('ceilometer_db_user')}"
+    pass: "%{hiera('ceilometer_db_password')}"
 # Gets overridden for ocdb role
 rjil::keystone::disable_db_sync: true
 
@@ -70,7 +72,8 @@ rjil::jiocloud::dns::entries:
     cname: lb.radosgw.service.consul
   ironic.jiocloud.com:
     cname: lb.ironic.service.consul
-
+  ceilometer.jiocloud.com:
+    cname: lb.ceilometer.service.consul
 ####################################
 ######## Openstack configs #########
 ####################################
@@ -95,6 +98,9 @@ neutron_internal_address: network.jiocloud.com
 
 ironic_public_address: ironic.jiocloud.com
 ironic_internal_address: ironic.jiocloud.com
+
+ceilometer_public_address: ceilometer.jiocloud.com
+ceilometer_internal_address: ceilometer.jiocloud.com
 
 ########### Openstack Common config
 ###################################
@@ -139,7 +145,7 @@ openstack_extras::auth_file::keystone_protocol: "%{hiera('api_protocol')}"
 
 ########### client install
 ##################################
-openstack_extras::client::ceilometer: true
+openstack_extras::client::ceilometer: false
 
 ########### Openstack ports
 ##################################
@@ -163,6 +169,9 @@ nova_osapi_port: 8774
 
 neutron_localbind_port: 19696
 neutron_port: 9696
+
+ceilometer_localbind_port: 18777
+ceilometer_port: 8777
 
 ########### rabbitmq config
 ###################################
