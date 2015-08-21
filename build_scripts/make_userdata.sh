@@ -52,6 +52,11 @@ if [ -n "${override_repo}" ]; then
   echo "override_repo=${override_repo}" > /etc/facter/facts.d/override_repo.txt
   time gem install faraday faraday_middleware --no-ri --no-rdoc;
 fi
+
+if [ -n "${nova_override_repo}" ]; then
+  echo "nova_override_repo=${nova_override_repo}" > /etc/facter/facts.d/nova_override_repo.txt
+fi
+
 if [ -n "${python_jiocloud_source_repo}" ]; then
   apt-get install -y python-pip python-jiocloud python-dev libffi-dev libssl-dev git
   pip install -e "${python_jiocloud_source_repo}@${python_jiocloud_source_branch}#egg=jiocloud"

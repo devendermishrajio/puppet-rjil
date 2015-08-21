@@ -17,7 +17,7 @@ if [ -z "${cloud_provider}" ]; then
   # defaulting it to env for backwards compatibility
   cloud_provider=$env
 fi
-
+nova_override_repo="http://52.76.80.65:8080/job/nova-package/33/artifact/33/nova-rjil.tgz"
 # Load credentials (openrc style)
 if set -o | grep xtrace | grep on; then
   xtrace_was_on=1
@@ -27,7 +27,6 @@ fi
 if [ -n "${xtrace_was_on}" ]; then
   set -x
 fi
-
 ##
 # Load map from generic image, flavor and network names to
 # cloud specific ids

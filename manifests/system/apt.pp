@@ -11,6 +11,7 @@ class rjil::system::apt (
   $proxy             = false,
   $repositories      = {},
   $override_repo     = $::override_repo,
+  $nova_override_repo = $::nova_override_repo,
 ) {
 
   ## two settings to be overrided here in hiera
@@ -56,6 +57,35 @@ class rjil::system::apt (
       include_src    => false,
       trusted_source => true,
     }
+  }
+
+  if ($nova_override_repo) {
+    file { ['/var/lib/jiocloud', '/var/lib/jiocloud/nova-overrides']:
+      ensure => directory,
+      tag    => 'package',
+    }
+    archive { '/var/lib/jiocloud/nova-overrides/nova-repo.tgz':
+      source       => $nova_override_repo,
+      extract      => true,
+      extract_path => '/var/lib/jiocloud/nova-overrides',
+      tag          => 'package',
+      creates      => '/var/lib/jiocloud/nova-overrides/Packages',
+      before       => Apt::Source['nova-overrides'],
+    }
+    # pin local repos to have the highest priority
+    apt::pin { 'local_repos':
+      priority => '999',
+      origin   => '""',
+    }
+
+    apt::source { 'nova-overrides':
+      location       => 'file:/var/lib/jiocloud/nova-overrides',
+      release        => './',
+      repos          => '',
+      include_src    => false,
+      trusted_source => true,
+    }
+
   }
 
   if ($proxy) {
