@@ -408,6 +408,10 @@ rjil::nova::controller::nova_auth:
   auth_url: "%{hiera('rjil::keystone::protocol')}://%{hiera('nova::api::auth_host')}:%{hiera('keystone_port')}/%{hiera('rjil::keystone::version')}"
 
 rjil::nova::controller::flavors:
+  micro:
+    ram: 512
+    disk: 20
+    vcpu: 1
   small:
     ram: 1024
     disk: 20
@@ -887,12 +891,15 @@ apache::default_ssl_key: '/etc/ssl/keys/jiocloud.com.key'
 tempest::tempest_repo_uri: 'https://github.com/JioCloud/tempest.git'
 tempest::image_name: cirros-0.3.3
 tempest::image_name_alt: cirros-0.3.3
-tempest::flavor_name: small
+tempest::flavor_name: micro
 tempest::admin_password: tempest_admin
 tempest::admin_username: tempest_admin
 tempest::tenant_name: tempest
 tempest::username: tempest
 tempest::password: tempest
+tempest::alt_tenant_name: alt_tempest
+tempest::alt_username: alt_tempest
+tempest::alt_password: alt_tempest
 tempest::identity_uri: "%{hiera('keystone::endpoint::public_url')}/%{hiera('rjil::keystone::version')}"
 tempest::identity_uri_v3: "%{hiera('keystone::endpoint::public_url')}/v3"
 tempest::neutron_available: true
@@ -964,6 +971,8 @@ tempest::extra_config:
     value: true
   oslo_concurrency/disable_process_locking:
     value: true
+  oslo_concurrency/lock_path:
+    value: /home/jenkins
   validation/run_validation:
     value: true
   validation/connect_method:
@@ -994,6 +1003,10 @@ tempest::provision::password: "%{hiera('tempest::password')}"
 tempest::provision::admin_username: "%{hiera('tempest::admin_username')}"
 tempest::provision::admin_password: "%{hiera('tempest::admin_password')}"
 tempest::provision::networkname: "%{hiera('tempest::fixed_network_name')}"
+tempest::provision::alt_imagename: "%{hiera('tempest::image_name_alt')}"
+tempest::provision::alt_tenantname: "%{hiera('tempest::alt_tenant_name')}"
+tempest::provision::alt_username: "%{hiera('tempest::alt_username')}"
+tempest::provision::alt_password: "%{hiera('tempest::alt_password')}"
 
 apache::trace_enable: 'Off'
 apache::mod::ssl::ssl_cipher: "HIGH:MEDIUM:!aNULL:!MD5:!RC4"

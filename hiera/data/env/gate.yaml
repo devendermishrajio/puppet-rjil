@@ -32,7 +32,7 @@ rjil::neutron::contrail::fip_pools:
     subnet_name: private_shared_subnet
     cidr: 99.0.0.0/24
     public: false
-    tenants: ['tempest','testtenant']
+    tenants: ['tempest','testtenant','alt_tempest']
 
 contrail::vrouter::vgw_subnets: ['100.1.0.0/24']
 rjil::neutron::ovs::swap_macs: true

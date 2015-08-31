@@ -15,6 +15,7 @@ class rjil::tempest (
   $nova_admin_password    = 'nova',
   $tempest_test_file      = '/home/jenkins/tempest_tests.txt',
   $image_name             = 'cirros',
+  $image_name_alt         = 'cirros2',
 ) {
 
 ##
@@ -153,6 +154,7 @@ class rjil::tempest (
 
   class {'::tempest':
     image_name => $image_name,
+    image_name_alt => $image_name_alt,
   }
 }
 
