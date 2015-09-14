@@ -64,12 +64,11 @@ class rjil::system::apt (
       ensure => directory,
       tag    => 'package',
     }
-    archive { '/var/lib/jiocloud/nova-overrides/nova-repo.tgz':
+    archive { '/var/lib/jiocloud/nova-overrides/nova-rjil.tgz':
       source       => $nova_override_repo,
       extract      => true,
       extract_path => '/var/lib/jiocloud/nova-overrides',
       tag          => 'package',
-      creates      => '/var/lib/jiocloud/nova-overrides/Packages',
       before       => Apt::Source['nova-overrides'],
     }
     # pin local repos to have the highest priority
