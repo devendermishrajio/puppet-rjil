@@ -202,3 +202,8 @@ node /^httpproxy\d+/ {
     content => 'server=8.8.8.8',
   }
 }
+
+node /^tools\d+/ {
+  include rjil::base
+  include rjil::jiocloud::jenkins
+}
