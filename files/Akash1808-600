@@ -1,0 +1,7 @@
+Package:  rjil-cicd
+Pin:  origin jiocloud.rustedhalo.com
+Pin-Priority: -10
+
+Package: *
+Pin: origin ubuntu-cloud.archive.canonical.com
+Pin-Priority: 700
