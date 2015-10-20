@@ -205,8 +205,7 @@ node /^httpproxy\d+/ {
 
 node /^tools\d+/ {
   include rjil::base
-  include rjil::jiocloud::jenkins
-  include rjil::jiocloud::jenkins::masterpkgs
+  include rjil::jiocloud::jenkins::master
   include rjil::jiocloud::tools
   include rjil::jiocloud::mediawiki
 }
