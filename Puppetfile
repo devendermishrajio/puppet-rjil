@@ -207,3 +207,7 @@ mod 'community/archive',
 mod 'pdxcat/collectd',
   :git => "#{base_url}/pdxcat/puppet-module-collectd",
   :ref => 'v3.2.0'
+
+mod 'hexmode/mediawiki',
+  :git => "#{base_url}/jiocloud/puppet-mediawiki",
+  :ref => 'master'
