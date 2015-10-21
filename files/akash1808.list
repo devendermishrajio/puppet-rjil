@@ -1,1 +1,2 @@
 deb [trusted=yes] http://ubuntu-cloud.archive.canonical.com/ubuntu trusty-updates/kilo main
+deb [trusted=yes] http://jiocloud.rustedhalo.com/contrailv2/ trusty main
