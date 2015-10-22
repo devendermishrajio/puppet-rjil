@@ -1022,3 +1022,13 @@ squid3::refresh_patterns:
 rjil::haproxy::default_timeout_connect: 50000
 rjil::haproxy::default_timeout_client: 50000
 rjil::haproxy::default_timeout_server: 50000
+
+###Adding mysql database for packagebuilder####
+rjil::pkbuilder::db::bind_address: "%{hiera('private_address')}"
+rjil::pkbuilder::db::mysql_root_pass: 'changeme'
+
+
+rjil::pkbuilder::db::dbs:
+  pkbuilder:
+    user: 'packager'
+    pass: 'justpackit'

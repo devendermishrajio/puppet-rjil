@@ -76,12 +76,3 @@ rustedhalo:
 
 rjil::jiocloud::consul::encrypt: "%{consul_gossip_encrypt}"
 
-###Adding mysql database for packagebuilder####
-rjil::pkbuilder::db::bind_address: "%{hiera('private_address')}"
-rjil::pkbuilder::db::mysql_root_pass: 'changeme'
-
-
-rjil::pkbuilder::db::dbs:
-  pkbuilder:
-    user: 'packager'
-    pass: 'justpackit'
