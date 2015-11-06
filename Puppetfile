@@ -211,3 +211,11 @@ mod 'pdxcat/collectd',
 mod 'hexmode/mediawiki',
   :git => "#{base_url}/jiocloud/puppet-mediawiki",
   :ref => 'master'
+
+mod 'garethr/docker',
+  :git => "#{base_url}/garethr/garethr-docker",
+  :ref => 'master'
+
+mod 'stankevich/python',
+  :git => "#{base_url}/stankevich/puppet-python",
+  :ref => 'master'
