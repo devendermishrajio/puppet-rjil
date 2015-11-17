@@ -111,11 +111,11 @@ rjil::neutron::contrail::fip_pools:
     subnet_ip_start: 100.1.0.11
     subnet_ip_end: 100.1.0.254
     public: true
-  private_shared:
-    network_name: private_shared_net
-    subnet_name: private_shared_subnet
-    cidr: 99.0.0.0/24
-    public: false
-    tenants: ['tempest','testtenant']
+#  private_shared:
+#    network_name: private_shared_net
+#    subnet_name: private_shared_subnet
+#    cidr: 99.0.0.0/24
+#    public: false
+#    tenants: ['tempest','testtenant']
 
 contrail::vrouter::vgw_subnets: ['100.1.0.0/24']
