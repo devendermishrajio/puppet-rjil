@@ -86,16 +86,16 @@ mod 'puppetlabs/concat',
   :ref => '1.1.1'
 
 mod 'enovance/ceph',
-  :git => "#{base_url}/jiocloud/puppet-ceph",
-  :ref => 'svn_to_git_2'
+  :git => "#{base_url}/jiocloudcompute/puppet-ceph",
+  :ref => 'vagrant_fix_kilo'
 
 mod 'stackforge/glance',
-  :git => "#{base_url}/stackforge/puppet-glance",
-  :ref => 'f377c0229c006b02f43a14be4979553e983cb98e'
+  :git => "#{base_url}/jiocloudcompute/puppet-glance",
+  :ref => 'vagrant_fix_kilo'
 
 mod 'puppetlabs/keystone',
-  :git => "#{base_url}/stackforge/puppet-keystone",
-  :ref => '89a650631189ffc2f857845d138666a046f0ae5f'
+  :git => "#{base_url}/jiocloudcompute/puppet-keystone",
+  :ref => 'vagrant_fix_kilo'
 
 mod 'puppetlabs/mysql',
   :git => "#{base_url}/puppetlabs/puppetlabs-mysql",
