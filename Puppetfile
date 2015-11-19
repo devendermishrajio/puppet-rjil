@@ -87,7 +87,7 @@ mod 'puppetlabs/concat',
 
 mod 'enovance/ceph',
   :git => "#{base_url}/jiocloudcompute/puppet-ceph",
-  :ref => 'vagrant_fix_kilo'
+  :ref => 'vagrant_fix_withkilo'
 
 mod 'stackforge/glance',
   :git => "#{base_url}/jiocloudcompute/puppet-glance",
