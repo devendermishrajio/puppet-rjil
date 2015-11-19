@@ -350,6 +350,7 @@ rjil::nova::controller::headers:
   - 'always set Access-Control-Allow-Methods "GET POST OPTIONS PUT DELETE PATCH"'
 nova::rpc_backend: "%{hiera('rpc_backend')}"
 nova::glance_api_servers: "%{hiera('api_protocol')}://%{hiera('glance_public_address')}:%{hiera('glance::keystone::auth::public_port')}"
+nova::glance_protocol: "%{hiera('api_protocol')}"
 nova::database_connection: "mysql://%{hiera('nova_db_user')}:%{hiera('nova_db_password')}@%{hiera('db_host')}/nova"
 nova::mysql_module: 2.3
 nova::debug: "%{hiera('debug')}"
